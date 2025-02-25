@@ -10,8 +10,8 @@ import {
   Token,
   Transaction,
   UniswapFactory,
-} from '../types/schema'
-import { Burn, Mint, Swap, Sync, Transfer } from '../types/templates/Pair/Pair'
+} from '../../generated/schema'
+import { Burn, Mint, Swap, Sync, Transfer } from '../../generated/templates/Pair/Pair'
 import { updatePairDayData, updatePairHourData, updateTokenDayData, updateUniswapDayData } from './dayUpdates'
 import { ADDRESS_ZERO, BI_18, convertTokenToDecimal, createUser, FACTORY_ADDRESS, ONE_BI, ZERO_BD } from './helpers'
 import { findEthPerToken, getEthPriceInUSD, getTrackedLiquidityUSD, getTrackedVolumeUSD } from './pricing'

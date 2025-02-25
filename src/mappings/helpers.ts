@@ -1,15 +1,15 @@
 /* eslint-disable prefer-const */
 import { Address, BigDecimal, BigInt } from '@graphprotocol/graph-ts'
 
-import { ERC20 } from '../types/Factory/ERC20'
-import { ERC20NameBytes } from '../types/Factory/ERC20NameBytes'
-import { ERC20SymbolBytes } from '../types/Factory/ERC20SymbolBytes'
-import { User } from '../types/schema'
-import { Factory as FactoryContract } from '../types/templates/Pair/Factory'
+import { ERC20 } from '../../generated/Factory/ERC20'
+import { ERC20NameBytes } from '../../generated/Factory/ERC20NameBytes'
+import { ERC20SymbolBytes } from '../../generated/Factory/ERC20SymbolBytes'
+import { User } from '../../generated/schema'
+import { Factory as FactoryContract } from '../../generated/templates/Pair/Factory'
 import { TokenDefinition } from './tokenDefinition'
 
 export const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000'
-export const FACTORY_ADDRESS = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'
+export const FACTORY_ADDRESS = '0xca3256975a99415ca37057d227428051db1c0ec2'
 
 export let ZERO_BI = BigInt.fromI32(0)
 export let ONE_BI = BigInt.fromI32(1)
@@ -32,10 +32,6 @@ export function exponentToBigDecimal(decimals: BigInt): BigDecimal {
 
 export function bigDecimalExp18(): BigDecimal {
   return BigDecimal.fromString('1000000000000000000')
-}
-
-export function convertEthToDecimal(eth: BigInt): BigDecimal {
-  return eth.toBigDecimal().div(exponentToBigDecimal(18))
 }
 
 export function convertTokenToDecimal(tokenAmount: BigInt, exchangeDecimals: BigInt): BigDecimal {
